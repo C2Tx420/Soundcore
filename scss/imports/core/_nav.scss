@@ -1,0 +1,37 @@
+.nav{
+    @include visible(0);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $bg-cl;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateX(1000px);
+    transition: $t;
+    a{
+        color: $white-cl;
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+        padding: 20px 0;
+        display: block;
+    }
+    a:hover{
+        opacity: .8;
+    }
+    &__close{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+    &.--active{
+        @include visible(1);
+        transform: translateX(0);
+        transition: $t;
+    }
+}
